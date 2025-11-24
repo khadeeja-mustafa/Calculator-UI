@@ -46,12 +46,10 @@ class CalculatorScreen extends StatelessWidget {
               flex: 3,
               child: Column(
                 children: [
-                  // لقد قمت بتحديث هذا الصف أيضاً ليتضمن زر الحذف بشكل صحيح
                   buildButtonRow(["AC", "%", "del", "÷"]),
                   buildButtonRow(["7", "8", "9", "×"]),
                   buildButtonRow(["4", "5", "6", "-"]),
                   buildButtonRow(["1", "2", "3", "+"]),
-                  // الصف الأخير الآن يحتوي على 4 أزرار متساوية
                   buildButtonRow(["00", "0", ".", "="]),
                 ],
               ),
@@ -68,9 +66,6 @@ class CalculatorScreen extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: buttons.map((buttonText) {
           return Expanded(
-            // ***** هذا هو التعديل الرئيسي *****
-            // تم إلغاء الشرط الذي يجعل زر الصفر عريضاً
-            // الآن كل الأزرار تأخذ نفس نسبة العرض
             flex: 1,
             child: CalculatorButton(
               text: buttonText,
